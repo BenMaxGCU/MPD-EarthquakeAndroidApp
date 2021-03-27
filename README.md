@@ -76,7 +76,7 @@ To run the compiled APK, an emulator or Android phone can be used
 
 ### APK Installation
 
-1. Download APK from this repository
+1. Download "app-debug.apk" APK from this repository
 2. In settings, allow installation of unknown apps
 3. Open the APK file with Package Installer
 4. Press install within Package Installer
