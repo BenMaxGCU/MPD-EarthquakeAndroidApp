@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://i.ibb.co/z74xK1y/earthquake.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://i.ibb.co/z74xK1y/earthquake.png" alt="House over Earthquake" width="80" height="80">
   </a>
 
   <h3 align="center">MPD Earthquake Application</h3>
