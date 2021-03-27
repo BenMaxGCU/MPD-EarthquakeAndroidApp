@@ -70,13 +70,13 @@ Instructions for accessing both the original code and compiled APK
 
 ### Prerequisites
 
-The only software required to run this program is Android Studio when accessing the original code.
-To run the compiled APK, an emulator or Android phone can be used
+* The only software required to run this program is Android Studio when accessing the original code.
+* To run the compiled APK, an emulator or Android phone can be used
 
 
 ### APK Installation
 
-1. Download "app-debug.apk" APK from this repository
+1. Download "app-debug.apk" APK from the Releases category under v1 Application
 2. In settings, allow installation of unknown apps
 3. Open the APK file with Package Installer
 4. Press install within Package Installer
