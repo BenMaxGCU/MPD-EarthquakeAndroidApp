@@ -77,7 +77,7 @@ Instructions for accessing both the original code and compiled APK
 ### APK Installation
 
 1. Download "app-debug.apk" APK from the Releases category under v1 Application
-2. In settings, allow installation of unknown apps
+2. In settings, allow installation of unknown apps (This can differ depending on your device)
 3. Open the APK file with Package Installer
 4. Press install within Package Installer
 
