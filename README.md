@@ -9,7 +9,7 @@
   <h3 align="center">MPD Earthquake Application</h3>
 
   <p align="center">
-    An Android Mobile Application that uses an RSS Feed to relay data about Earthquakes
+    An Android Mobile Application that uses a RSS Feed to relay data about Earthquakes
     <br />
   </p>
 </p>
