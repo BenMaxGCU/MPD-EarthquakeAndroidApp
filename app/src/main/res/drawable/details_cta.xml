@@ -1,0 +1,25 @@
+<!-- Student Name: Ben Maxwell -->
+<!-- Student Number: S1917932 -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="160dp"
+    android:height="100dp"
+    android:viewportWidth="160"
+    android:viewportHeight="100"
+    >
+
+    <group>
+
+        <clip-path
+            android:pathData="M25 0H135C148.807 0 160 11.1929 160 25V75C160 88.8071 148.807 100 135 100H25C11.1929 100 0 88.8071 0 75V25C0 11.1929 11.1929 0 25 0Z"
+            />
+
+        <path
+            android:pathData="M0 0V100H160V0"
+            android:fillColor="#7C818F"
+            />
+
+    </group>
+
+</vector>

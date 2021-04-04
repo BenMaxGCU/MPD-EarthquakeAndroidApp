@@ -50,6 +50,8 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
     private ImageButton homeBtn;
     private TextView titleTxt;
     private TextView descTxt;
+    private TextView dateOutput;
+    private TextView strengthOutput;
 
     // Google Maps
     SupportMapFragment mapFragment;
@@ -77,8 +79,9 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
 
         // Set Layout Elements
         homeBtn = (ImageButton) findViewById(R.id.homeButton);
-        titleTxt = (TextView) findViewById(R.id.titleTV);
         descTxt = (TextView) findViewById(R.id.descTV);
+        dateOutput = (TextView) findViewById(R.id.dateOutput);
+        strengthOutput = (TextView) findViewById(R.id.strengthOutput);
 
         // onClick set to home button so user can return to MainActivity
         homeBtn.setOnClickListener(this::onClick);
@@ -95,22 +98,16 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         // Import Variables from Intent
         earthquake = (Earthquake) getIntent().getSerializableExtra("Earthquake");
 
-        title = earthquake.getTitle();;
+        title = earthquake.getTitle();
         desc = earthquake.getDesc();
         lat = Double.parseDouble(earthquake.getLat()); // Parses to double for use as a mathematical value in the GoogleMaps API
         longitude = Double.parseDouble(earthquake.getLongitude()); // Parses to double for use as a mathematical value in the GoogleMaps API
         stringDate = earthquake.getDate();
 
-        // Convert date from String to Date
-        try
-        {
-            DateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss", Locale.getDefault()); // Setting the format of the date using the string from the RSS feed as a guide
-            date = format.parse(stringDate); // Formatting stringDate to a Date object using DateFormat
-        }
-        catch (ParseException e)
-        {
-            e.printStackTrace();
-        }
+        // Setting Date and Strength to the corresponding value
+        String displaymag = "Mag: " + earthquake.getMagni().toString();
+        strengthOutput.setText(displaymag);
+        dateOutput.setText(earthquake.getDate());
 
         // Start async task ProcessInBG to load data into the layout
         new ProcessInBG().execute();
@@ -132,7 +129,7 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         // Set magnitude equal to the last value in description
         // This used to be handled in onCreate but due to issues it was moved here and is now functional
         magStrength = desc.substring(desc.lastIndexOf(" ") + 1);
-        magStrength.trim();
+        magStrength = magStrength.trim();
         magDouble = Double.parseDouble(magStrength);
 
         // If statements to change marker colour based on magnitude
@@ -186,7 +183,6 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
                 }
 
                 // Setting the TextViews to the passed data
-                titleTxt.setText(title);
                 descTxt.setText(builder.toString());
             }
             catch (Exception e)

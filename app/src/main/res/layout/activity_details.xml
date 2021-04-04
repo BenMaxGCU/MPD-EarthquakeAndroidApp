@@ -1,65 +1,154 @@
 <!-- Student Name: Ben Maxwell -->
 <!-- Student Number: S1917932 -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent" android:layout_height="fill_parent">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/details_act"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_activity" >
 
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:padding="1dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_previous"
-            android:visibility="visible" />
+    <!-- Home Button -->
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:padding="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_previous_light"
+        android:visibility="visible" />
 
-        <TextView
-            android:id="@+id/titleTV"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textSize="20sp" />
+    <!-- Details Heading -->
+    <TextView
+        android:id="@+id/earthquake_"
+        android:layout_width="250dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="97dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="Earthquake Details"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="28sp"
+        android:gravity="top"
+        />
 
-        <TextView
-            android:id="@+id/descHeader"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Earthquake Description"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:textSize="20sp" />
+    <!-- Google Maps Fragment -->
+    <fragment
+        android:id="@+id/quakeMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="417dp"
+        android:layout_height="350dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp" />
 
-        <TextView
-            android:id="@+id/descTV"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textSize="20sp" />
+    <!-- Details Overlay, used for displaying detailed info -->
+    <View
+        android:id="@+id/details_overlay"
+        android:layout_width="416dp"
+        android:layout_height="405dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="331dp"
+        android:background="@drawable/details_overlay"
+        />
 
-        <TextView
-            android:id="@+id/mapHeader"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Location of Earthquake:"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:textSize="20sp" />
+    <View
+        android:id="@+id/rightCta"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="222dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/details_cta"
+        />
 
-        <fragment
-            android:id="@+id/quakeMap"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="386dp"
-            android:layout_height="377dp"
-            android:layout_gravity="center" />
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="277dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="361dp"
+        android:background="@drawable/ic_quake_light" />
 
-    </LinearLayout>
-</ScrollView>
+    <View
+        android:id="@+id/leftCta"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/details_cta"
+        />
+
+    <TextView
+        android:id="@+id/strengthOutput"
+        android:layout_width="72dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="266dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="416dp"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:gravity="top" />
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="363dp"
+        android:background="@drawable/ic_clock_light" />
+
+    <TextView
+        android:id="@+id/dateOutput"
+        android:layout_width="76dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="416dp"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:gravity="top" />
+
+    <!-- Description TextViews -->
+    <TextView
+        android:id="@+id/descHeader"
+        android:layout_width="173dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="476dp"
+        android:text="Quake Description"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:gravity="top" />
+
+    <TextView
+        android:id="@+id/descTV"
+        android:layout_width="352dp"
+        android:layout_height="167dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="509dp"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:gravity="top" />
+
+</RelativeLayout>

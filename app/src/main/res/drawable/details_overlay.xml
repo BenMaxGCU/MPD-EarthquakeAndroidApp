@@ -1,0 +1,26 @@
+<!-- Student Name: Ben Maxwell -->
+<!-- Student Number: S1917932 -->
+<!-- This is essentially just a rounded square -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="416dp"
+    android:height="405dp"
+    android:viewportWidth="416"
+    android:viewportHeight="405"
+    >
+
+    <group>
+
+        <clip-path
+            android:pathData="M35 0H381C400.33 0 416 15.67 416 35V370C416 389.33 400.33 405 381 405H35C15.67 405 0 389.33 0 370V35C0 15.67 15.67 0 35 0Z"
+            />
+
+        <path
+            android:pathData="M0 0V405H416V0"
+            android:fillColor="#FFFFFF"
+            />
+
+    </group>
+
+</vector>
