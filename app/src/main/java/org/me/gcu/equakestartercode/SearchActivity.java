@@ -186,9 +186,20 @@ public class SearchActivity extends AppCompatActivity implements DatePickerDialo
                 deepQuake = earthquakeArrayList.get(0);
                 strongQuake = earthquakeArrayList.get(0);
 
+                // To accommodate single choices to find a specific date
+                // End Date will be the same as Start Date if there is no input and vice versa
+                if(startDate == null)
+                {
+                    startDate = endDate;
+                }
+                else if(endDate == null)
+                {
+                    endDate = startDate;
+                }
+
                 for(Earthquake eq : earthquakeArrayList) // For each earthquake in earthquakeArrayList loop through If
                 {
-                    if(eq.getTrueDate().equals(startDate) || eq.getTrueDate().after(startDate) && eq.getTrueDate().before(endDate) || eq.getTrueDate().equals(endDate))
+                    if(!eq.getTrueDate().before(startDate) && !eq.getTrueDate().after(endDate) || eq.getTrueDate().after(startDate) && eq.getTrueDate().before(endDate))
                     {
                         // Check and Filter by conditions
                         // Variables will be set here and added to searchedList after the For loop
