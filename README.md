@@ -81,6 +81,8 @@ Instructions for accessing both the original code and compiled APK
 3. Open the APK file with Package Installer
 4. Press install within Package Installer
 
+### Video Demo
+* The video demonstration of this application can be found in the releases section
 
 <!-- CONTACT -->
 ## Contact
